@@ -9,6 +9,24 @@ const input = [
     { brand: "VW", model: " Golf ", kw: 106 }
 ];
 
+let carsOver100Kw = [];
+
+function initTask1() {
+    sortByKw();
+    extractByKw();
+}
+
 function sortByKw() {
     input.sort((a, b) => a.kw - b.kw);
+    console.log(input);
 };
+
+function extractByKw() {
+    for (let i = 0; i < input.length; i++) {
+        const car = input[i];
+        if (car.kw > 100) {
+            carsOver100Kw.push(car);
+        }
+    }
+    console.log(carsOver100Kw);
+}
