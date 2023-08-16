@@ -8,3 +8,7 @@ const input = [
     { brand: " Audi ", model: "A3", kw: 123 },
     { brand: "VW", model: " Golf ", kw: 106 }
 ];
+
+function sortByKw() {
+    input.sort((a, b) => a.kw - b.kw);
+};
