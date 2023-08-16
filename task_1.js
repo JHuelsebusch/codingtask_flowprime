@@ -19,7 +19,7 @@ function initTask1() {
 
 function sortByKw() {
     input.sort((a, b) => a.kw - b.kw);
-    console.log(input);
+    // console.log(input);
 };
 
 function extractByKw(kw) {
@@ -29,7 +29,7 @@ function extractByKw(kw) {
             carsMoreKw.push(car);
         }
     }
-    console.log(carsMoreKw);
+    // console.log(carsMoreKw);
 }
 
 function outputModels() {

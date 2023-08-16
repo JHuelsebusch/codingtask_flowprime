@@ -6,6 +6,7 @@ async function initTask3() {
     await fetchCarManufacturers();
     extractByVehicleTypes(3);
     modifyArray();
+    displayCarManufacturersTable();
 }
 
 async function fetchCarManufacturers() {
@@ -16,7 +17,7 @@ async function fetchCarManufacturers() {
         }
         throw new Error('No data found');
     });
-    console.log(carManufacturers)
+    // console.log(carManufacturers)
 }
 
 function extractByVehicleTypes(a) { // a = minimum amount of vehicle types 
@@ -26,7 +27,7 @@ function extractByVehicleTypes(a) { // a = minimum amount of vehicle types
             carManufacturersWithMoreVehicleTypes.push(carManufacturer)
         }
     }
-    console.log(carManufacturersWithMoreVehicleTypes);
+    // console.log(carManufacturersWithMoreVehicleTypes);
 }
 
 function modifyArray() {
@@ -40,5 +41,8 @@ function modifyArray() {
         }
         modifiedArray.push(data);
     }
-    console.log(modifiedArray)
+}
+
+function displayCarManufacturersTable() {
+    console.table(modifiedArray);
 }
