@@ -1,7 +1,9 @@
 let carManufacturers = [];
+let carManufacturersWithMoreVehicleTypes = [];
 
-function initTask3() {
-    fetchCarManufacturers();
+async function initTask3() {
+    await fetchCarManufacturers();
+    extractByVehicleTypes(3);
 }
 
 async function fetchCarManufacturers() {
@@ -13,4 +15,14 @@ async function fetchCarManufacturers() {
         throw new Error('No data found');
     });
     console.log(carManufacturers)
+}
+
+function extractByVehicleTypes(a) { // a = minimum amount of vehicle types 
+    for (let i = 0; i < carManufacturers.Results.length; i++) {
+        const carManufacturer = carManufacturers.Results[i];
+        if (carManufacturer.VehicleTypes.length >= a) {
+            carManufacturersWithMoreVehicleTypes.push(carManufacturer)
+        }
+    }
+    console.log(carManufacturersWithMoreVehicleTypes);
 }
