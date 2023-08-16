@@ -6,6 +6,7 @@ let uniqueNumbers = [];
 
 function initTask2() {
     extractUniqueNumbers();
+    calculateSum();
 }
 
 function extractUniqueNumbers() {
@@ -13,4 +14,11 @@ function extractUniqueNumbers() {
     arrayNumbers = arrayNumbers.filter(function(item, pos) { // removes duplicated numbers
         return arrayNumbers.indexOf(item) == pos;
     })
+}
+
+function calculateSum() {
+    let result = arrayNumbers.reduce((a, b) => {
+        return a + b;
+    })
+    console.log('The result of all the unique numbers is:', result);
 }
