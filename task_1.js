@@ -40,6 +40,6 @@ function outputModels() {
         if (i != input.length - 1) {
             output += ", ";
         }
-        console.log(output);
     }
+    console.log(output);
 }

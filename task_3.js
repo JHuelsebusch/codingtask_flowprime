@@ -1,9 +1,11 @@
 let carManufacturers = [];
 let carManufacturersWithMoreVehicleTypes = [];
+let modifiedArray = [];
 
 async function initTask3() {
     await fetchCarManufacturers();
     extractByVehicleTypes(3);
+    modifyArray();
 }
 
 async function fetchCarManufacturers() {
@@ -25,4 +27,18 @@ function extractByVehicleTypes(a) { // a = minimum amount of vehicle types
         }
     }
     console.log(carManufacturersWithMoreVehicleTypes);
+}
+
+function modifyArray() {
+    for (let j = 0; j < carManufacturersWithMoreVehicleTypes.length; j++) {
+        const carManufacturer = carManufacturersWithMoreVehicleTypes[j];
+        let data = {
+            country: carManufacturer.Country,
+            name: carManufacturer.Mfr_CommonName,
+            fullName: carManufacturer.Mfr_Name,
+            amountVehicleTypes: carManufacturer.VehicleTypes.length,
+        }
+        modifiedArray.push(data);
+    }
+    console.log(modifiedArray)
 }
